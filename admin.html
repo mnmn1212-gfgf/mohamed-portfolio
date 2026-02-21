@@ -1,0 +1,66 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1.0" />
+  <title>Dashboard | Mohamed Portfolio</title>
+  <link rel="stylesheet" href="./styles.css" />
+  <style>
+    body{padding-top:90px}
+    .dash{max-width:1120px;margin:0 auto;padding:18px}
+    .dash-grid{display:grid;grid-template-columns:repeat(12,1fr);gap:14px}
+    .dash-card{
+      grid-column: span 6;
+      padding:18px;border-radius:18px;
+      background: rgba(255,255,255,.06);
+      border:1px solid rgba(255,255,255,.10);
+      backdrop-filter: blur(18px);
+      box-shadow: 0 28px 90px rgba(0,0,0,.35);
+    }
+    .dash-card h2{margin:0 0 10px}
+    .kpi{font-size:42px;font-weight:1000;line-height:1}
+    .sub{opacity:.8;font-weight:900;margin-top:6px}
+    @media(max-width:980px){.dash-card{grid-column:span 12}}
+  </style>
+</head>
+<body>
+  <header class="topbar">
+    <a class="brand" href="./index.html">
+      <span class="brand-mark"></span>
+      <span class="brand-text">Dashboard</span>
+    </a>
+    <div class="topbar-actions">
+      <a class="chip" href="./index.html">Back</a>
+    </div>
+  </header>
+
+  <main class="dash">
+    <div class="dash-grid">
+      <section class="dash-card">
+        <h2>Visits</h2>
+        <div class="kpi" id="dVisits">—</div>
+        <div class="sub">Global unique visitors</div>
+      </section>
+
+      <section class="dash-card">
+        <h2>Rating</h2>
+        <div class="kpi" id="dAvg">—</div>
+        <div class="sub"><span id="dVotes">—</span> votes</div>
+      </section>
+
+      <section class="dash-card" style="grid-column: span 12;">
+        <h2>Distribution</h2>
+        <div class="rating-bars">
+          <div class="rbar"><span class="rlabel">5 ★</span><div class="rtrack"><span class="rfill" id="db5"></span></div><span class="rnum" id="dn5">0</span></div>
+          <div class="rbar"><span class="rlabel">4 ★</span><div class="rtrack"><span class="rfill" id="db4"></span></div><span class="rnum" id="dn4">0</span></div>
+          <div class="rbar"><span class="rlabel">3 ★</span><div class="rtrack"><span class="rfill" id="db3"></span></div><span class="rnum" id="dn3">0</span></div>
+          <div class="rbar"><span class="rlabel">2 ★</span><div class="rtrack"><span class="rfill" id="db2"></span></div><span class="rnum" id="dn2">0</span></div>
+          <div class="rbar"><span class="rlabel">1 ★</span><div class="rtrack"><span class="rfill" id="db1"></span></div><span class="rnum" id="dn1">0</span></div>
+        </div>
+      </section>
+    </div>
+  </main>
+
+  <script type="module" src="./firebase-dashboard.js"></script>
+</body>
+</html>
